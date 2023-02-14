@@ -44,7 +44,7 @@ def get_version():
     # - revpart     2
     # - localpart   gb92bef6[-dirty]
     desc = subprocess.check_output([
-        'git', 'describe', '--dirty', '--long', '--match', 'v*',
+        'git', 'describe', '--tags', '--dirty', '--long', '--match', 'v*',
     ])
     match = re.match(r'^v([^-]*)-([0-9]+)-(.*)$', desc)
     assert match is not None
